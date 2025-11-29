@@ -12,4 +12,8 @@ export default defineConfig({
         tailwindcss(),
         react(),
     ],
+    build: {
+        outDir: 'public/build',   // Untuk Vercel
+        emptyOutDir: true,        // Bersihin folder build setiap build
+    },
 });
