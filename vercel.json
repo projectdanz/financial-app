@@ -1,6 +1,7 @@
 {
   "version": 2,
   "framework": "vite",
+  "installCommand": "mkdir -p bin && curl -sS https://getcomposer.org/installer | php -- --install-dir=bin --filename=composer && ./bin/composer install --no-dev --prefer-dist --optimize-autoloader",
   "buildCommand": "npm install && npm run build",
   "outputDirectory": "public",
   "functions": {
