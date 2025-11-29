@@ -1,15 +1,14 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "api/index.php", "use": "@vercel/php" },
-    {
-      "src": "resources/js/app.jsx",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "public/build" }
+  "version": 3,
+  "buildCommand": "composer install && npm ci && npm run build",
+  "outputDirectory": "public",
+  "installCommand": "composer install",
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-community-php@0.6.1"
     }
-  ],
+  },
   "routes": [
-    { "src": "/build/(.*)", "dest": "/public/build/$1" },
     { "src": "/(.*)", "dest": "/api/index.php" }
   ]
 }
