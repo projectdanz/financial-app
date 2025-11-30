@@ -11,7 +11,7 @@ import Logs from './pages/Logs.jsx';
 
 // Setup axios default base URL
 import axios from 'axios';
-axios.defaults.baseURL = window.location.origin;
+axios.defaults.baseURL = import.meta.env.VITE_API_URL || window.location.origin;
 
 // Check if user is authenticated
 const isAuthenticated = () => {
